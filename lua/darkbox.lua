@@ -69,6 +69,8 @@ local function get_groups(colors)
     TSString = { fg = colors.green },
     TSVariable = { fg = colors.fg },
     TSComment = { fg = colors.gray, italic = true },
+    TSPunctBracket = { fg = colors.green },
+    TSInclude = { fg = colors.blue },
   }
 end
 
