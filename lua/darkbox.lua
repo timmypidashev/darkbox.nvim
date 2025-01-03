@@ -225,7 +225,7 @@ local function get_groups(colors)
 
     -- JavaScript
     javaScript = { fg = colors.fg },
-    javaScriptBraces = { fg = colors.fg },
+    javaScriptBraces = { fg = colors.aqua },
     javaScriptNumber = { fg = colors.purple },
     javaScriptNull = { fg = colors.purple },
     javaScriptFunction = { fg = colors.aqua },
@@ -238,7 +238,7 @@ local function get_groups(colors)
     typescriptLabel = { fg = colors.aqua },
     typescriptFuncKeyword = { fg = colors.aqua },
     typescriptIdentifier = { fg = colors.orange },
-    typescriptBraces = { fg = colors.fg },
+    typescriptBraces = { fg = colors.aqua },
     typescriptEndColons = { fg = colors.fg },
     typescriptDOMObjects = { fg = colors.fg },
     typescriptAjaxMethods = { fg = colors.fg },
