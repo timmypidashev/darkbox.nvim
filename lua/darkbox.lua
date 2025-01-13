@@ -29,7 +29,7 @@ local function get_groups(colors)
     CursorLineNr = { fg = colors.yellow },
     LineNr = { fg = colors.gray },
     SignColumn = { bg = colors.bg },
-    VertSplit = { fg = colors.dim_black },
+    VertSplit = { fg = colors.bg },
     StatusLine = { fg = colors.fg, bg = colors.black },
     StatusLineNC = { fg = colors.gray, bg = colors.black },
     Visual = { bg = colors.dim_gray },
