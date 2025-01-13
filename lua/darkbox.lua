@@ -18,6 +18,9 @@ M.colors = {
   dim_black = "#3c3836",   -- For UI elements needing slight contrast from bg
 }
 
+-- Set WinSeparator to black
+vim.cmd("hi WinSeparator guifg=#000000")
+
 -- Define all the highlight groups
 local function get_groups(colors)
   return {
@@ -30,7 +33,6 @@ local function get_groups(colors)
     LineNr = { fg = colors.gray },
     SignColumn = { bg = colors.bg },
     VertSplit = { fg = colors.bg },
-    WinSeparator = { guifg = colors.bg },
     StatusLine = { fg = colors.fg, bg = colors.black },
     StatusLineNC = { fg = colors.gray, bg = colors.black },
     Visual = { bg = colors.dim_gray },
