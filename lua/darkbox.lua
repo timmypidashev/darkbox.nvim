@@ -31,6 +31,7 @@ local function get_groups(colors)
     SignColumn = { bg = colors.bg },
     VertSplit = { fg = colors.bg },
     ColorColumn = { fg = colors.dim_black },
+    FoldColumn = { fg = colors.dim_black },
     StatusLine = { fg = colors.fg, bg = colors.black },
     StatusLineNC = { fg = colors.gray, bg = colors.black },
     Visual = { bg = colors.dim_gray },
