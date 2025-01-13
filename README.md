@@ -44,3 +44,4 @@ MIT License - See [LICENSE](LICENSE) for details
 
 ---
 Made with ♥️ by [timmypidashev](https://github.com/timmypidashev)
+View the [project page](https://timmypidashev.dev/projects/darkbox) for darkbox on my website for more info :D
