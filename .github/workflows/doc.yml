@@ -2,8 +2,9 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: write
 name: docs
-
 jobs:
   docs:
     runs-on: ubuntu-latest
