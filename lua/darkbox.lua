@@ -89,7 +89,7 @@ Darkbox.palette = {
   classic_foreground = "#ebdbb2",
   retro_foreground = "#bdae93",
   dim_foreground = "#a89984",
-  foreground_1 = "#bdae93",
+  foreground_1 = "#ebdbb2",
   foreground_2 = "#d5c4a1",
   foreground_3 = "#bdae93",
   foreground_4 = "#a89984",
@@ -177,7 +177,7 @@ local function get_groups()
 
   local groups = {
     DarkboxFg0 = { fg = colors.foreground },
-    DarkboxFg1 = { fg = colors.foreground_1 },
+    DarkboxFg1 = { fg = (config.contrast == "retro" or config.contrast == "dim") and colors.foreground or colors.foreground_1 },
     DarkboxFg2 = { fg = colors.foreground_2 },
     DarkboxFg3 = { fg = colors.foreground_3 },
     DarkboxFg4 = { fg = colors.foreground_4 },
