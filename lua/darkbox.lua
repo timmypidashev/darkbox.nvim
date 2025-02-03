@@ -128,7 +128,7 @@ local function get_colors()
     foreground_1 = palette.foreground_1,
     foreground_2 = palette.foreground_2,
     foreground_3 = palette.foreground_3,
-    foreground_4 = palette.foreground_4
+    foreground_4 = palette.foreground_4,
   }
 
   if config.contrast == "classic" then
