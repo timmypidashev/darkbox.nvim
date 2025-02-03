@@ -11,7 +11,7 @@
 ---@field palette DarkboxPalette
 local Darkbox = {}
 
----@alias Contrast "classic" | "vivid" | ""
+---@alias Contrast "classic" | "dim" | ""
 
 ---@class ItalicConfig
 ---@field strings boolean
@@ -84,9 +84,9 @@ Darkbox.palette = {
   background_3 = "#665c54",
   background_4 = "#7c6f64",
   classic_foreground = "#ebdbb2",
-  base_foreground = "#d5c4a1",
-  vivid_foreground = "#a89984",
-  foreground_1 = "#ebdbb2",
+  base_foreground = "#bdae93",
+  dim_foreground = "#a89984",
+  foreground_1 = "#bdae93",
   foreground_2 = "#d5c4a1",
   foreground_3 = "#bdae93",
   foreground_4 = "#a89984",
@@ -104,13 +104,13 @@ Darkbox.palette = {
   base_purple = "#b16286",
   base_aqua = "#689d6a",
   base_orange = "#d65d0e",
-  vivid_red = "#9d0006",
-  vivid_green = "#79740e",
-  vivid_yellow = "#b57614",
-  vivid_blue = "#076678",
-  vivid_purple = "#8f3f71",
-  vivid_aqua = "#427b58",
-  vivid_orange = "#af3a03",
+  dim_red = "#9d0006",
+  dim_green = "#79740e",
+  dim_yellow = "#b57614",
+  dim_blue = "#076678",
+  dim_purple = "#8f3f71",
+  dim_aqua = "#427b58",
+  dim_orange = "#af3a03",
   gray = "#928374",
 }
 
@@ -138,15 +138,15 @@ local function get_colors()
     colors.aqua = palette.classic_aqua
     colors.orange = palette.classic_orange
     colors.gray = palette.gray
-  elseif config.contrast == "vivid" then
-    colors.foreground = palette.vivid_foreground
-    colors.red = palette.vivid_red
-    colors.green = palette.vivid_green
-    colors.yellow = palette.vivid_yellow
-    colors.blue = palette.vivid_blue
-    colors.purple = palette.vivid_purple
-    colors.aqua = palette.vivid_aqua
-    colors.orange = palette.vivid_orange
+  elseif config.contrast == "dim" then
+    colors.foreground = palette.dim_foreground
+    colors.red = palette.dim_red
+    colors.green = palette.dim_green
+    colors.yellow = palette.dim_yellow
+    colors.blue = palette.dim_blue
+    colors.purple = palette.dim_purple
+    colors.aqua = palette.dim_aqua
+    colors.orange = palette.dim_orange
     colors.gray = palette.gray
   else  -- base/default
     colors.foreground = palette.base_foreground
