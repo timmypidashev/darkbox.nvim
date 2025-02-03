@@ -1,12 +1,12 @@
--- :::::::::     :::    ::::::::: :::    ::::::::::::  :::::::: :::    ::: 
--- :+:    :+:  :+: :+:  :+:    :+::+:   :+: :+:    :+::+:    :+::+:    :+: 
--- +:+    +:+ +:+   +:+ +:+    +:++:+  +:+  +:+    +:++:+    +:+ +:+  +:+  
--- +#+    +:++#++:++#++:+#++:++#: +#++:++   +#++:++#+ +#+    +:+  +#++:+   
--- +#+    +#++#+     +#++#+    +#++#+  +#+  +#+    +#++#+    +#+ +#+  +#+  
--- #+#    #+##+#     #+##+#    #+##+#   #+# #+#    #+##+#    #+##+#    #+# 
+-- :::::::::     :::    ::::::::: :::    ::::::::::::  :::::::: :::    :::
+-- :+:    :+:  :+: :+:  :+:    :+::+:   :+: :+:    :+::+:    :+::+:    :+:
+-- +:+    +:+ +:+   +:+ +:+    +:++:+  +:+  +:+    +:++:+    +:+ +:+  +:+
+-- +#+    +:++#++:++#++:+#++:++#: +#++:++   +#++:++#+ +#+    +:+  +#++:+
+-- +#+    +#++#+     +#++#+    +#++#+  +#+  +#+    +#++#+    +#+ +#+  +#+
+-- #+#    #+##+#     #+##+#    #+##+#   #+# #+#    #+##+#    #+##+#    #+#
 -- ######### ###     ######    ######    ############  ######## ###    ###
 --
--- INSPIRED BY GRUVBOX (https://github.com/morhetz/gruvbox) 
+-- INSPIRED BY GRUVBOX (https://github.com/morhetz/gruvbox)
 -- Could not have been made possible without the gruvbox.nvim project (https://github.com/ellisonleao/gruvbox.nvim)
 
 ---@class Darkbox
@@ -151,7 +151,7 @@ local function get_colors()
     colors.aqua = palette.dim_aqua
     colors.orange = palette.dim_orange
     colors.gray = palette.gray
-  else  -- base/default
+  else -- base/default
     colors.foreground = palette.base_foreground
     colors.red = palette.base_red
     colors.green = palette.base_green
@@ -178,26 +178,26 @@ local function get_groups()
 
   if config.terminal_colors then
     local term_colors = {
-        palette.background,     -- color_0 (black)
-        palette.base_red,       -- color_1 (red)
-        palette.base_green,     -- color_2 (green)
-        palette.base_yellow,    -- color_3 (yellow)
-        palette.base_blue,      -- color_4 (blue)
-        palette.base_purple,    -- color_5 (purple)
-        palette.base_aqua,      -- color_6 (cyan/aqua)
-        palette.foreground_4,   -- color_7 (white)
-        palette.gray,           -- color_8 (bright black)
-        palette.classic_red,    -- color_9 (bright red)
-        palette.classic_green,  -- color_10 (bright green)
-        palette.classic_yellow, -- color_11 (bright yellow)
-        palette.classic_blue,   -- color_12 (bright blue)
-        palette.classic_purple, -- color_13 (bright purple)
-        palette.classic_aqua,   -- color_14 (bright cyan/aqua)
-        colors.foreground,      -- color_15 (specified contrast foreground)
+      palette.background, -- color_0 (black)
+      palette.base_red, -- color_1 (red)
+      palette.base_green, -- color_2 (green)
+      palette.base_yellow, -- color_3 (yellow)
+      palette.base_blue, -- color_4 (blue)
+      palette.base_purple, -- color_5 (purple)
+      palette.base_aqua, -- color_6 (cyan/aqua)
+      palette.foreground_4, -- color_7 (white)
+      palette.gray, -- color_8 (bright black)
+      palette.classic_red, -- color_9 (bright red)
+      palette.classic_green, -- color_10 (bright green)
+      palette.classic_yellow, -- color_11 (bright yellow)
+      palette.classic_blue, -- color_12 (bright blue)
+      palette.classic_purple, -- color_13 (bright purple)
+      palette.classic_aqua, -- color_14 (bright cyan/aqua)
+      colors.foreground, -- color_15 (specified contrast foreground)
     }
 
     for index, value in ipairs(term_colors) do
-        vim.g["terminal_color_" .. index - 1] = value
+      vim.g["terminal_color_" .. index - 1] = value
     end
   end
 
@@ -248,8 +248,10 @@ local function get_groups()
     DarkboxPurpleUnderline = { undercurl = config.undercurl, sp = colors.purple },
     DarkboxAquaUnderline = { undercurl = config.undercurl, sp = colors.aqua },
     DarkboxOrangeUnderline = { undercurl = config.undercurl, sp = colors.orange },
-    Normal = config.transparent_mode and { fg = colors.foreground_1, bg = nil } or { fg = colors.foreground_1, bg = colors.background },
-    NormalFloat = config.transparent_mode and { fg = colors.foreground_1, bg = nil } or { fg = colors.foreground_1, bg = colors.background_1 },
+    Normal = config.transparent_mode and { fg = colors.foreground_1, bg = nil }
+      or { fg = colors.foreground_1, bg = colors.background },
+    NormalFloat = config.transparent_mode and { fg = colors.foreground_1, bg = nil }
+      or { fg = colors.foreground_1, bg = colors.background_1 },
     NormalNC = config.dim_inactive and { fg = colors.foreground_1, bg = colors.background_1 } or { link = "Normal" },
     CursorLine = { bg = colors.background_1 },
     CursorColumn = { link = "CursorLine" },
@@ -273,7 +275,8 @@ local function get_groups()
     StatusLineNC = { fg = colors.background_1, bg = colors.foreground_4, reverse = config.inverse },
     WinBar = { fg = colors.foreground_4, bg = colors.background },
     WinBarNC = { fg = colors.foreground_3, bg = colors.background_1 },
-    WinSeparator = config.transparent_mode and { fg = colors.background_3, bg = nil } or { fg = colors.background_3, bg = colors.background },
+    WinSeparator = config.transparent_mode and { fg = colors.background_3, bg = nil }
+      or { fg = colors.background_3, bg = colors.background },
     WildMenu = { fg = colors.blue, bg = colors.background_2, bold = config.bold },
     Directory = { link = "DarkboxGreenBold" },
     Title = { link = "DarkboxGreenBold" },
@@ -285,7 +288,8 @@ local function get_groups()
     LineNr = { fg = colors.background_4 },
     SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.background_1 },
     Folded = { fg = colors.gray, bg = colors.background_1, italic = config.italic.folds },
-    FoldColumn = config.transparent_mode and { fg = colors.gray, bg = nil } or { fg = colors.gray, bg = colors.background_1 },
+    FoldColumn = config.transparent_mode and { fg = colors.gray, bg = nil }
+      or { fg = colors.gray, bg = colors.background_1 },
     Cursor = { reverse = config.inverse },
     vCursor = { link = "Cursor" },
     iCursor = { link = "Cursor" },
@@ -522,7 +526,12 @@ local function get_groups()
     htmlLink = { fg = colors.foreground_4, underline = config.underline },
     htmlSpecialChar = { link = "DarkboxRed" },
     htmlBold = { fg = colors.foreground, bg = colors.background, bold = config.bold },
-    htmlBoldUnderline = { fg = colors.foreground, bg = colors.background, bold = config.bold, underline = config.underline },
+    htmlBoldUnderline = {
+      fg = colors.foreground,
+      bg = colors.background,
+      bold = config.bold,
+      underline = config.underline,
+    },
     htmlBoldItalic = { fg = colors.foreground, bg = colors.background, bold = config.bold, italic = true },
     htmlBoldUnderlineItalic = {
       fg = colors.foreground,
@@ -1021,7 +1030,12 @@ local function get_groups()
     MiniStatuslineModeReplace = { fg = colors.background, bg = colors.red, bold = config.bold },
     MiniStatuslineModeVisual = { fg = colors.background, bg = colors.green, bold = config.bold },
     MiniSurround = { link = "IncSearch" },
-    MiniTablineCurrent = { fg = colors.green, bg = colors.background_1, bold = config.bold, reverse = config.invert_tabline },
+    MiniTablineCurrent = {
+      fg = colors.green,
+      bg = colors.background_1,
+      bold = config.bold,
+      reverse = config.invert_tabline,
+    },
     MiniTablineFill = { link = "TabLineFill" },
     MiniTablineHidden = { fg = colors.background_4, bg = colors.background_1, reverse = config.invert_tabline },
     MiniTablineModifiedCurrent = {
