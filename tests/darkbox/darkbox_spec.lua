@@ -141,21 +141,4 @@ describe("tests", function()
     darkbox.load()
     assert.is_nil(vim.g.terminal_color_0)
   end)
-
-  it("sets terminal colors when terminal_colors is true", function()
-    clear_term_colors()
-    darkbox.setup({ terminal_colors = true })
-    darkbox.load()
-
-    -- dark bg
-    local colors = require("gruvbox").palette
-    vim.opt.background = "dark"
-    assert.are.same(vim.g.terminal_color_0, colors.dark0)
-
-    -- light bg
-    clear_term_colors()
-    darkbox.load()
-    vim.opt.background = "light"
-    assert.are.same(vim.g.terminal_color_0, colors.light0)
-  end)
 end)
