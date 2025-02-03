@@ -4,7 +4,10 @@
 -- +#+    +:++#++:++#++:+#++:++#: +#++:++   +#++:++#+ +#+    +:+  +#++:+   
 -- +#+    +#++#+     +#++#+    +#++#+  +#+  +#+    +#++#+    +#+ +#+  +#+  
 -- #+#    #+##+#     #+##+#    #+##+#   #+# #+#    #+##+#    #+##+#    #+# 
--- ######### ###     ######    ######    ############  ######## ###    ### 
+-- ######### ###     ######    ######    ############  ######## ###    ###
+--
+-- INSPIRED BY GRUVBOX (https://github.com/morhetz/gruvbox) 
+-- Could not have been made possible without the gruvbox.nvim project (https://github.com/ellisonleao/gruvbox.nvim)
 
 ---@class Darkbox
 ---@field config DarkboxConfig
