@@ -11,11 +11,11 @@ A pure-black refresh of the retro-groove aesthetic for modern displays. Darkbox 
 
 ## 📸 Screenshots
 
-### Base
-![Screenshot](.github/screenshot.png)
-
 ### Classic
 ![Screenshot](.github/screenshot_classic.png)
+
+### Retro 
+![Screenshot](.github/screenshot_retro.png)
 
 ### Dim
 ![Screenshot](.github/screenshot_dim.png)
@@ -59,7 +59,7 @@ require("darkbox").setup({
   invert_tabline = false,
   invert_intend_guides = false,
   inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "", -- can be "classic", "dim" or empty string
+  contrast = "", -- can be "retro", "dim" or empty string for classic
   palette_overrides = {},
   overrides = {},
   dim_inactive = false,

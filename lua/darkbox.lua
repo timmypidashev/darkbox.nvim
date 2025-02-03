@@ -87,7 +87,7 @@ Darkbox.palette = {
   background_3 = "#665c54",
   background_4 = "#7c6f64",
   classic_foreground = "#ebdbb2",
-  base_foreground = "#bdae93",
+  retro_foreground = "#bdae93",
   dim_foreground = "#a89984",
   foreground_1 = "#bdae93",
   foreground_2 = "#d5c4a1",
@@ -100,13 +100,13 @@ Darkbox.palette = {
   classic_purple = "#d3869b",
   classic_aqua = "#8ec07c",
   classic_orange = "#fe8019",
-  base_red = "#cc241d",
-  base_green = "#98971a",
-  base_yellow = "#d79921",
-  base_blue = "#458588",
-  base_purple = "#b16286",
-  base_aqua = "#689d6a",
-  base_orange = "#d65d0e",
+  retro_red = "#cc241d",
+  retro_green = "#98971a",
+  retro_yellow = "#d79921",
+  retro_blue = "#458588",
+  retro_purple = "#b16286",
+  retro_aqua = "#689d6a",
+  retro_orange = "#d65d0e",
   dim_red = "#9d0006",
   dim_green = "#79740e",
   dim_yellow = "#b57614",
@@ -131,15 +131,15 @@ local function get_colors()
     foreground_4 = palette.foreground_4,
   }
 
-  if config.contrast == "classic" then
-    colors.foreground = palette.classic_foreground
-    colors.red = palette.classic_red
-    colors.green = palette.classic_green
-    colors.yellow = palette.classic_yellow
-    colors.blue = palette.classic_blue
-    colors.purple = palette.classic_purple
-    colors.aqua = palette.classic_aqua
-    colors.orange = palette.classic_orange
+  if config.contrast == "retro" then
+    colors.foreground = palette.retro_foreground
+    colors.red = palette.retro_red
+    colors.green = palette.retro_green
+    colors.yellow = palette.retro_yellow
+    colors.blue = palette.retro_blue
+    colors.purple = palette.retro_purple
+    colors.aqua = palette.retro_aqua
+    colors.orange = palette.retro_orange
     colors.gray = palette.gray
   elseif config.contrast == "dim" then
     colors.foreground = palette.dim_foreground
@@ -151,15 +151,15 @@ local function get_colors()
     colors.aqua = palette.dim_aqua
     colors.orange = palette.dim_orange
     colors.gray = palette.gray
-  else -- base/default
-    colors.foreground = palette.base_foreground
-    colors.red = palette.base_red
-    colors.green = palette.base_green
-    colors.yellow = palette.base_yellow
-    colors.blue = palette.base_blue
-    colors.purple = palette.base_purple
-    colors.aqua = palette.base_aqua
-    colors.orange = palette.base_orange
+  else -- classic/default
+    colors.foreground = palette.classic_foreground
+    colors.red = palette.classic_red
+    colors.green = palette.classic_green
+    colors.yellow = palette.classic_yellow
+    colors.blue = palette.classic_blue
+    colors.purple = palette.classic_purple
+    colors.aqua = palette.classic_aqua
+    colors.orange = palette.classic_orange
     colors.gray = palette.gray
   end
 
@@ -174,36 +174,10 @@ end
 local function get_groups()
   local colors = get_colors()
   local config = Darkbox.config
-  local palette = Darkbox.palette
-
-  if config.terminal_colors then
-    local term_colors = {
-      palette.background, -- color_0 (black)
-      palette.base_red, -- color_1 (red)
-      palette.base_green, -- color_2 (green)
-      palette.base_yellow, -- color_3 (yellow)
-      palette.base_blue, -- color_4 (blue)
-      palette.base_purple, -- color_5 (purple)
-      palette.base_aqua, -- color_6 (cyan/aqua)
-      palette.foreground_4, -- color_7 (white)
-      palette.gray, -- color_8 (bright black)
-      palette.classic_red, -- color_9 (bright red)
-      palette.classic_green, -- color_10 (bright green)
-      palette.classic_yellow, -- color_11 (bright yellow)
-      palette.classic_blue, -- color_12 (bright blue)
-      palette.classic_purple, -- color_13 (bright purple)
-      palette.classic_aqua, -- color_14 (bright cyan/aqua)
-      colors.foreground, -- color_15 (specified contrast foreground)
-    }
-
-    for index, value in ipairs(term_colors) do
-      vim.g["terminal_color_" .. index - 1] = value
-    end
-  end
 
   local groups = {
     DarkboxFg0 = { fg = colors.foreground },
-    DarkboxFg1 = { fg = colors.foreground },
+    DarkboxFg1 = { fg = colors.foreground_1 },
     DarkboxFg2 = { fg = colors.foreground_2 },
     DarkboxFg3 = { fg = colors.foreground_3 },
     DarkboxFg4 = { fg = colors.foreground_4 },
@@ -248,8 +222,8 @@ local function get_groups()
     DarkboxPurpleUnderline = { undercurl = config.undercurl, sp = colors.purple },
     DarkboxAquaUnderline = { undercurl = config.undercurl, sp = colors.aqua },
     DarkboxOrangeUnderline = { undercurl = config.undercurl, sp = colors.orange },
-    Normal = config.transparent_mode and { fg = colors.foreground_1, bg = nil }
-      or { fg = colors.foreground_1, bg = colors.background },
+    Normal = config.transparent_mode and { fg = colors.foreground, bg = nil }
+      or { fg = colors.foreground, bg = colors.background },
     NormalFloat = config.transparent_mode and { fg = colors.foreground_1, bg = nil }
       or { fg = colors.foreground_1, bg = colors.background_1 },
     NormalNC = config.dim_inactive and { fg = colors.foreground_1, bg = colors.background_1 } or { link = "Normal" },
