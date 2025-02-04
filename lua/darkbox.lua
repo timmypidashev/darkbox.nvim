@@ -225,7 +225,7 @@ local function get_groups()
     Normal = config.transparent_mode and { fg = colors.foreground, bg = nil }
       or { fg = colors.foreground, bg = colors.background },
     NormalFloat = config.transparent_mode and { fg = colors.foreground_1, bg = nil }
-      or { fg = colors.foreground_1, bg = colors.background_1 },
+      or { fg = colors.foreground_1, bg = colors.background },
     NormalNC = config.dim_inactive and { fg = colors.foreground_1, bg = colors.background_1 } or { link = "Normal" },
     CursorLine = { bg = colors.background_1 },
     CursorColumn = { link = "CursorLine" },
