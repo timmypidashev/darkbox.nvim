@@ -1182,7 +1182,7 @@ end
 --- main load function
 Darkbox.load = function()
   if vim.version().minor < 8 then
-    vim.notify_once("darkbox.nvim: you must use neovim 0.8 or higher")
+    vim.notify_once("darkbox.nvim: you must use neovim 0.9 or higher")
     return
   end
 
