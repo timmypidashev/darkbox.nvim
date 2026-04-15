@@ -22,25 +22,48 @@ A pure-black refresh of the retro-groove aesthetic for modern displays. Darkbox 
 
 ## 🚀 Installation
 
-### Using [lazy.nvim](https://github.com/folke/lazy.nvim)
+### Using vim.pack (Neovim 0.12+)
 
-Add the following to your Neovim configuration:
+The built-in package manager. Recommended.
+
+```lua
+vim.pack.add({
+  { src = "https://github.com/timmypidashev/darkbox.nvim" },
+})
+
+require("darkbox").setup({
+  contrast = "retro",
+})
+vim.cmd.colorscheme("darkbox")
+```
+
+### Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ```lua
 return {
   "timmypidashev/darkbox.nvim",
   lazy = false,
+  priority = 1000,
   config = function()
-    require("darkbox").load()
-  end
+    require("darkbox").setup({
+      contrast = "retro",
+    })
+    vim.cmd.colorscheme("darkbox")
+  end,
 }
 ```
 
+> The examples below use the `vim.pack` pattern. If you use lazy.nvim, place the `setup()` and `colorscheme` calls inside the `config` function instead.
+
 ## ✏️ Configuration
 
-Additional settings for darkbox are available:
+All available options with their defaults:
+
 ```lua
--- Default options:
+vim.pack.add({
+  { src = "https://github.com/timmypidashev/darkbox.nvim" },
+})
+
 require("darkbox").setup({
   terminal_colors = true, -- add neovim terminal colors
   undercurl = true,
@@ -65,24 +88,28 @@ require("darkbox").setup({
   dim_inactive = false,
   transparent_mode = false,
 })
-vim.cmd("colorscheme darkbox")
+vim.cmd.colorscheme("darkbox")
 ```
 
-**VERY IMPORTANT**: Make sure to call setup() **BEFORE** calling the colorscheme command, to use your custom configs
+**VERY IMPORTANT**: Call `setup()` **BEFORE** the colorscheme command to apply custom configs.
 
-## 🔧 Overrides 
+## 🔧 Overrides
 
-### Palette 
+### Palette
 
-You can specify your own palette colors. For example:
+Specify your own palette colors:
 
 ```lua
-require("darkbox").setup({
-    palette_overrides = {
-       base_red = "#991900",
-    }
+vim.pack.add({
+  { src = "https://github.com/timmypidashev/darkbox.nvim" },
 })
-vim.cmd("colorscheme darkbox")
+
+require("darkbox").setup({
+  palette_overrides = {
+    base_red = "#991900",
+  },
+})
+vim.cmd.colorscheme("darkbox")
 ```
 
 ## 🤝 Contributing
